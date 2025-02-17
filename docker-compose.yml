@@ -1,0 +1,12 @@
+services:
+  api:
+    image: ${DOCKER_REGISTRY-}api
+    build:
+      context: .
+      dockerfile: API/Dockerfile
+
+  Redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
